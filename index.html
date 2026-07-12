@@ -220,6 +220,19 @@
     .quiz-sec .qtitle{margin-bottom:clamp(16px,2.5vh,26px);}
     .quiz-sec .bar{margin-bottom:clamp(18px,3vh,30px);}
   }
+  /* ---- індивідуальний характер карток ---- */
+  .step:nth-child(2)::before{transform:skewX(14deg); transition-duration:.95s; background:linear-gradient(255deg,transparent,rgba(236,231,223,.13),transparent);}
+  .step:nth-child(2):hover{transform:translateY(-5px) scale(1.015); border-color:rgba(236,231,223,.4);}
+  .step:nth-child(3)::before{transition-duration:.55s;}
+  .step:nth-child(3):hover{transform:translateY(-7px) rotate(.45deg);}
+  .step:nth-child(2) .sp{animation-delay:.05s;}
+  .faq .qa:hover{transform:translateY(-3px);}
+  .letter-card::before{transition-duration:1.1s;}
+  /* ---- анімація «розкладаю руни» ---- */
+  #loadGlyph{animation:glyphPulse 1.4s ease-in-out infinite;}
+  @keyframes glyphPulse{0%,100%{opacity:.75; text-shadow:0 0 24px rgba(210,154,112,.35);}50%{opacity:1; text-shadow:0 0 52px rgba(210,154,112,.75);}}
+  .loadline{font-family:'Advent Pro',sans-serif; font-size:18px; letter-spacing:1px; color:var(--txt-dim); margin-top:14px; min-height:26px;}
+  .dob-actions{display:flex; flex-direction:column; gap:10px;}
   /* ---- планшети / вузькі вікна ---- */
   @media(max-width:900px){
     .steps{gap:18px;}
@@ -408,15 +421,20 @@ ru:{
   {t:'Что вы уже пробовали?',o:['Разговоры с близкими','Психолог, книги','Практики, расклады','Ничего, держу в себе']},
   {t:'Чего вы ждёте от разбора?',o:['Понять, что происходит','Подсказку, как действовать','Опору и спокойствие','Просто интересно']}
  ],
+ runes:{fehu:{n:'Феху — искра ресурса',c:'Феху — руна первого зерна: то, что уже есть у вас в руках, но пока не названо богатством. Период просит не искать новое, а разглядеть и укрепить то, что уже растёт.'},raidho:{n:'Райдо — дорога',c:'Райдо — руна пути и ритма. Колесо уже катится: от вас требуется не толкать его, а держать направление. Это период движения, где важен не рывок, а шаг за шагом.'},kenaz:{n:'Кеназ — факел',c:'Кеназ — огонь, который освещает не всё поле, а следующий шаг. Ваш период — время увидеть скрытое: причину, деталь, слово, которое всё объясняет. Свет уже зажжён.'},gebo:{n:'Гебо — дар и обмен',c:'Гебо — руна равновесия между «давать» и «принимать». Период проверяет ваши связи: где обмен честен, а где вы платите больше, чем получаете. Восстановите баланс — станет легче.'},algiz:{n:'Альгиз — защита',c:'Альгиз — поднятая ладонь и тростник, который гнётся, но не ломается. Период просит границ: не стен, а ясного «да» и «нет». Защита уже с вами — ей нужно только ваше разрешение.'},sowilo:{n:'Соулу — солнце',c:'Соулу — руна солнца, которое не спрашивает разрешения светить. Период возвращает силу, отданную обстоятельствам. Опирайтесь на то, что радует, — это не слабость, а источник.'},berkana:{n:'Беркана — росток',c:'Беркана — берёза, мать, медленный рост. То, что вы бережёте, уже пустило корни, даже если над землёй пока тихо. Период просит терпения и заботы — не форсируйте всходы.'},ehwaz:{n:'Эваз — переправа',c:'Эваз — руна движения между берегами. В старых текстах её знак — конь: то, что несёт человека через расстояние, которое пешком не пройти. Прежняя опора уже не держит, а новая ещё скрыта туманом. Это не потеря пути. Это сам путь.'},laguz:{n:'Лагуз — поток',c:'Лагуз — вода, которая всегда находит русло. Ваш период не про контроль, а про доверие движению: не грести против, а выбирать течения. Интуиция сейчас точнее расчёта.'}},
+ sphere:['В том, что касается чувств, руна ложится прямо: отношения сейчас — главное зеркало периода. То, что происходит между вами и другим человеком, повторяет происходящее внутри вас.','В вопросе покоя знак указывает: тревога — не враг, а сторож, который слишком долго стоял на посту. Периоду нужна не борьба, а смена караула: практики, границы, тишина.','В деле и деньгах руна говорит о развилке: старый способ зарабатывать и жить своё отработал. Ресурс придёт не из усилия, а из выбора направления.','В поиске себя знак разворачивает вопрос: не «кем мне быть», а «что во мне уже есть и просит места». Копайте там, где отзывается.','В семейном поле руна мягкая: узлы развязываются не силой, а временем и словом. Один честный разговор изменит больше, чем месяц молчаливых усилий.'],
+ practice:['Практика на 7 дней: каждый вечер выписывайте три тревоги и рядом — одно действие, которое по силам завтра. Тревога теряет власть, когда у неё появляется список дел.','Практика на 7 дней: каждый день меняйте одну мелочь — маршрут, порядок утра, место за столом. Застой боится малых сдвигов больше, чем больших планов.','Практика на 7 дней: утром спрашивайте себя: «Если бы страха не было — что бы я выбрала?» Записывайте не думая. К концу недели решение будет на бумаге.','Практика на 7 дней: каждый вечер три строки — что держало, что тянуло, что готовы отпустить. Восстановление — это не забыть, а разложить по местам.','Практика на 7 дней: раз в день делайте одну вещь только потому, что хочется, — без пользы и цели. То, чего «не хватает», живёт именно там.'],
+ loading:['Читаю ваши ответы…','Бросаю руны…','Составляю толкование…'],
+ dob_skip:'Продолжить без даты',
  dob_t:'Дата рождения', dob_note:'По ней рассчитывается ваш символ. Ни для чего другого она не используется.',
  day:'День', month:'Месяц', year:'Год', dob_btn:'Указать и получить результат',
  err_empty:'Укажите день, месяц и год — без них расчёт невозможен.', err_bad:'Такой даты не существует — проверьте день и месяц.',
  months_nom:['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
  dob_fmt:(d,m,y,M)=>`${d} ${['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'][m]} ${y} года`,
- res_h:'Символ вашего периода', rune:'Эваз — переправа', dob_line:'Рассчитано по вашей дате рождения: ',
- res_body:'Эваз — руна движения между берегами. В старых текстах её знак — конь: то, что несёт человека через расстояние, которое пешком не пройти. Ваш период похож на переправу: прежняя опора уже не держит, а новая ещё скрыта туманом. Это не потеря пути. Это сам путь.',
- res_note:'(демо: в проде 1 из 15–20 трактовок по логике ответов и дате)',
- practice_b:'Практика на 7 дней:', practice:'каждый вечер три строки: что держало, что тянуло, что готовы отпустить.',
+ res_h:'Символ вашего периода', dob_line:'Рассчитано по вашей дате рождения: ',
+
+
+
  deliver:'Куда прислать полный текст толкования?', btn_tg:'Получить в Telegram', btn_mail:'На почту', btn_send:'Отправить', mail_ph:'ваш@email', mail_aria:'Электронная почта',
  exp_h:'Кто ведёт практику', exp_lead:'Живая традиция, а не генератор гороскопов',
  photo:'ФОТО: руки + руны, тёплый свет',
@@ -453,15 +471,20 @@ en:{
   {t:'What have you already tried?',o:['Talking to close ones','Therapy or books','Practices and readings','Nothing — I keep it inside']},
   {t:'What do you want from this reading?',o:["To understand what's happening",'A hint on how to act','Support and calm','Just curious']}
  ],
+ runes:{fehu:{n:'Fehu — the Spark of Resource',c:'Fehu is the rune of the first grain: what is already in your hands but not yet named as wealth. This period asks you not to seek the new, but to see and strengthen what is already growing.'},raidho:{n:'Raidho — the Road',c:'Raidho is the rune of path and rhythm. The wheel is already turning: your task is not to push it, but to hold the direction. A period of movement where steady steps matter more than leaps.'},kenaz:{n:'Kenaz — the Torch',c:'Kenaz is a fire that lights not the whole field, but the next step. This is a time to see what was hidden: the cause, the detail, the word that explains everything. The light is already lit.'},gebo:{n:'Gebo — the Gift',c:'Gebo is the rune of balance between giving and receiving. This period tests your bonds: where the exchange is honest, and where you pay more than you receive. Restore the balance and it gets lighter.'},algiz:{n:'Algiz — the Warding Hand',c:'Algiz is a raised palm and a reed that bends but does not break. This period asks for boundaries: not walls, but a clear yes and no. The protection is already with you — it only needs your permission.'},sowilo:{n:'Sowilo — the Sun',c:'Sowilo is the sun that asks no permission to shine. This period returns the strength you gave away to circumstances. Lean on what brings you joy — that is not weakness, it is the source.'},berkana:{n:'Berkana — the Sprout',c:'Berkana is the birch, the mother, the slow growth. What you protect has already taken root, even if all is quiet above ground. Be patient and tend it — do not force the shoots.'},ehwaz:{n:'Ehwaz — the Crossing',c:'Ehwaz is the rune of movement between shores. In the old texts its sign is the horse: what carries you across a distance you cannot walk. The old ground no longer holds, and the new one is still hidden in mist. This is not losing your way. This is the way.'},laguz:{n:'Laguz — the Stream',c:'Laguz is water that always finds its bed. This period is not about control but about trusting the current: not rowing against it, but choosing your streams. Right now intuition is more precise than calculation.'}},
+ sphere:['In matters of the heart the rune falls plainly: relationships are the main mirror of this period. What happens between you and another repeats what happens within you.','On the question of peace, the sign points: anxiety is not an enemy but a guard who has stood watch too long. This period needs not a fight but a changing of the guard: practices, boundaries, quiet.','In work and money the rune shows a fork: the old way of earning and living has run its course. The resource will come not from effort, but from choosing a direction.','In the search for yourself, the sign turns the question around: not “who should I be,” but “what is already in me asking for room.” Dig where it resonates.','In the family field the rune is gentle: knots untie not by force but by time and words. One honest conversation will change more than a month of silent effort.'],
+ practice:['A 7-day practice: every evening write down three worries and, next to each, one action you can take tomorrow. Anxiety loses power once it has a to-do list.','A 7-day practice: change one small thing every day — your route, your morning order, your seat at the table. Stagnation fears small shifts more than grand plans.','A 7-day practice: each morning ask yourself, “If there were no fear — what would I choose?” Write the answer without thinking. By week\'s end the decision will be on paper.','A 7-day practice: three lines every evening — what held you, what pulled you, what you are ready to release. Recovery is not forgetting; it is putting things in their place.','A 7-day practice: once a day do one thing only because you want to — no use, no goal. What is “missing” usually lives exactly there.'],
+ loading:['Reading your answers…','Casting the runes…','Composing your interpretation…'],
+ dob_skip:'Continue without a date',
  dob_t:'Date of birth', dob_note:"It's used to calculate your symbol — and for nothing else.",
  day:'Day', month:'Month', year:'Year', dob_btn:'Confirm and get my result',
  err_empty:"Please select day, month and year — the reading can't be calculated without them.", err_bad:"That date doesn't exist — check the day and month.",
  months_nom:['January','February','March','April','May','June','July','August','September','October','November','December'],
  dob_fmt:(d,m,y,M)=>`${M[m]} ${d}, ${y}`,
- res_h:'The symbol of your period', rune:'Ehwaz — the Crossing', dob_line:'Calculated from your date of birth: ',
- res_body:'Ehwaz is the rune of movement between shores. In the old texts its sign is the horse: that which carries you across a distance you cannot walk. Your period is a crossing: the old ground no longer holds, and the new one is still hidden in mist. This is not losing your way. This is the way.',
- res_note:'(demo: in production, 1 of 15–20 interpretations based on your answers and date)',
- practice_b:'A 7-day practice:', practice:"three lines every evening — what held you, what pulled you, what you're ready to release.",
+ res_h:'The symbol of your period', dob_line:'Calculated from your date of birth: ',
+
+
+
  deliver:'Where should we send the full interpretation?', btn_tg:'Get it in Telegram', btn_mail:'By email', btn_send:'Send', mail_ph:'your@email', mail_aria:'Email address',
  exp_h:'Who leads the practice', exp_lead:'A living tradition, not a horoscope generator',
  photo:'PHOTO: hands + runes, warm light',
@@ -498,15 +521,20 @@ uk:{
   {t:'Що ви вже пробували?',o:['Розмови з близькими','Психолог, книжки','Практики, розклади','Нічого, тримаю в собі']},
   {t:'Чого ви чекаєте від розбору?',o:['Зрозуміти, що відбувається','Підказку, як діяти','Опору і спокій','Просто цікаво']}
  ],
+ runes:{fehu:{n:'Феху — іскра ресурсу',c:'Феху — руна першого зерна: те, що вже у ваших руках, але ще не назване багатством. Період просить не шукати нового, а розгледіти й зміцнити те, що вже росте.'},raidho:{n:'Райдо — дорога',c:'Райдо — руна шляху і ритму. Колесо вже котиться: від вас треба не штовхати його, а тримати напрям. Період руху, де важливий не ривок, а крок за кроком.'},kenaz:{n:'Кеназ — смолоскип',c:'Кеназ — вогонь, що освітлює не все поле, а наступний крок. Ваш період — час побачити приховане: причину, деталь, слово, яке все пояснює. Світло вже запалене.'},gebo:{n:'Гебо — дар і обмін',c:'Гебо — руна рівноваги між «давати» і «приймати». Період перевіряє ваші звʼязки: де обмін чесний, а де ви платите більше, ніж отримуєте. Відновіть баланс — стане легше.'},algiz:{n:'Альгіз — захист',c:'Альгіз — піднята долоня і очерет, що гнеться, але не ламається. Період просить меж: не стін, а ясного «так» і «ні». Захист уже з вами — йому потрібен лише ваш дозвіл.'},sowilo:{n:'Соулу — сонце',c:'Соулу — руна сонця, яке не питає дозволу світити. Період повертає силу, віддану обставинам. Спирайтеся на те, що радує, — це не слабкість, а джерело.'},berkana:{n:'Беркана — паросток',c:'Беркана — береза, мати, повільний ріст. Те, що ви бережете, вже пустило коріння, навіть якщо над землею тихо. Період просить терпіння й турботи — не форсуйте сходи.'},ehwaz:{n:'Еваз — переправа',c:'Еваз — руна руху між берегами. У старих текстах її знак — кінь: те, що несе людину через відстань, яку пішки не пройти. Колишня опора вже не тримає, а нова ще прихована туманом. Це не втрата шляху. Це сам шлях.'},laguz:{n:'Лагуз — потік',c:'Лагуз — вода, що завжди знаходить русло. Ваш період не про контроль, а про довіру рухові: не гребти проти, а обирати течії. Інтуїція зараз точніша за розрахунок.'}},
+ sphere:['У тому, що стосується почуттів, руна лягає прямо: стосунки зараз — головне дзеркало періоду. Те, що відбувається між вами й іншою людиною, повторює те, що відбувається всередині вас.','У питанні спокою знак вказує: тривога — не ворог, а вартовий, який надто довго стояв на посту. Періоду потрібна не боротьба, а зміна варти: практики, межі, тиша.','У справі й грошах руна говорить про розвилку: старий спосіб заробляти і жити своє відпрацював. Ресурс прийде не з зусилля, а з вибору напряму.','У пошуку себе знак розвертає питання: не «ким мені бути», а «що в мені вже є і просить місця». Копайте там, де відгукується.','У родинному полі руна мʼяка: вузли розвʼязуються не силою, а часом і словом. Одна чесна розмова змінить більше, ніж місяць мовчазних зусиль.'],
+ practice:['Практика на 7 днів: щовечора виписуйте три тривоги і поруч — одну дію, яка під силу завтра. Тривога втрачає владу, коли в неї зʼявляється список справ.','Практика на 7 днів: щодня змінюйте одну дрібницю — маршрут, порядок ранку, місце за столом. Застій боїться малих зрушень більше, ніж великих планів.','Практика на 7 днів: щоранку питайте себе: «Якби страху не було — що б я обрала?» Записуйте не думаючи. До кінця тижня рішення буде на папері.','Практика на 7 днів: щовечора три рядки — що тримало, що тягнуло, що готові відпустити. Відновлення — це не забути, а розкласти по місцях.','Практика на 7 днів: раз на день робіть одну річ лише тому, що хочеться, — без користі й мети. Те, чого «бракує», живе саме там.'],
+ loading:['Читаю ваші відповіді…','Кидаю руни…','Складаю тлумачення…'],
+ dob_skip:'Продовжити без дати',
  dob_t:'Дата народження', dob_note:'За нею розраховується ваш символ. Ні для чого іншого вона не використовується.',
  day:'День', month:'Місяць', year:'Рік', dob_btn:'Вказати й отримати результат',
  err_empty:'Вкажіть день, місяць і рік — без них розрахунок неможливий.', err_bad:'Такої дати не існує — перевірте день і місяць.',
  months_nom:['Січень','Лютий','Березень','Квітень','Травень','Червень','Липень','Серпень','Вересень','Жовтень','Листопад','Грудень'],
  dob_fmt:(d,m,y,M)=>`${d} ${['січня','лютого','березня','квітня','травня','червня','липня','серпня','вересня','жовтня','листопада','грудня'][m]} ${y} року`,
- res_h:'Символ вашого періоду', rune:'Еваз — переправа', dob_line:'Розраховано за вашою датою народження: ',
- res_body:'Еваз — руна руху між берегами. У старих текстах її знак — кінь: те, що несе людину через відстань, яку пішки не пройти. Ваш період схожий на переправу: колишня опора вже не тримає, а нова ще прихована туманом. Це не втрата шляху. Це сам шлях.',
- res_note:'(демо: у проді 1 із 15–20 тлумачень за логікою відповідей і датою)',
- practice_b:'Практика на 7 днів:', practice:'щовечора три рядки: що тримало, що тягнуло, що готові відпустити.',
+ res_h:'Символ вашого періоду', dob_line:'Розраховано за вашою датою народження: ',
+
+
+
  deliver:'Куди надіслати повний текст тлумачення?', btn_tg:'Отримати в Telegram', btn_mail:'На пошту', btn_send:'Надіслати', mail_ph:'ваша@пошта', mail_aria:'Електронна пошта',
  exp_h:'Хто веде практику', exp_lead:'Жива традиція, а не генератор гороскопів',
  photo:'ФОТО: руки + руни, тепле світло',
@@ -543,15 +571,20 @@ kk:{
   {t:'Не істеп көрдіңіз?',o:['Жақындармен сөйлесу','Психолог, кітаптар','Тәжірибелер, раскладтар','Ештеңе, ішімде ұстаймын']},
   {t:'Талдаудан не күтесіз?',o:['Не болып жатқанын түсіну','Қалай әрекет ету керектігі туралы кеңес','Тірек пен тыныштық','Жай қызық']}
  ],
+ runes:{fehu:{n:'Феху — ресурс ұшқыны',c:'Феху — алғашқы дән рунасы: қолыңызда бар, бірақ әлі байлық деп аталмаған нәрсе. Бұл кезең жаңаны іздеуді емес, өсіп келе жатқанды көріп, нығайтуды сұрайды.'},raidho:{n:'Райдо — жол',c:'Райдо — жол мен ырғақ рунасы. Дөңгелек қозғалып кетті: сізден оны итеру емес, бағытты ұстау талап етіледі. Секіріс емес, қадам маңызды кезең.'},kenaz:{n:'Кеназ — алау',c:'Кеназ — бүкіл даланы емес, келесі қадамды жарықтандыратын от. Жасырынды көретін уақыт: себепті, детальді, бәрін түсіндіретін сөзді. Жарық жанып тұр.'},gebo:{n:'Гебо — сый мен алмасу',c:'Гебо — «беру» мен «алу» арасындағы тепе-теңдік рунасы. Кезең байланыстарыңызды тексереді: қайда алмасу адал, қайда сіз алғаннан көп төлейсіз. Тепе-теңдікті қалпына келтіріңіз — жеңілдейді.'},algiz:{n:'Альгиз — қорғаныс',c:'Альгиз — көтерілген алақан және майысса да сынбайтын қамыс. Кезең шекара сұрайды: қабырға емес, айқын «иә» мен «жоқ». Қорғаныс сізбен бірге — оған тек рұқсатыңыз керек.'},sowilo:{n:'Соулу — күн',c:'Соулу — жарқырауға рұқсат сұрамайтын күн рунасы. Кезең жағдайларға беріліп кеткен күшіңізді қайтарады. Қуантатынға сүйеніңіз — бұл әлсіздік емес, қайнар көз.'},berkana:{n:'Беркана — өскін',c:'Беркана — қайың, ана, баяу өсу. Сіз сақтап жүрген нәрсе тамыр жайып қойды, жер үстінде әзірге тыныш болса да. Шыдамдылық пен қамқорлық керек — өскінді асықтырмаңыз.'},ehwaz:{n:'Эваз — өткел',c:'Эваз — жағалаулар арасындағы қозғалыс рунасы. Ескі мәтіндерде оның белгісі — ат: жаяу өте алмайтын қашықтықтан алып өтетін күш. Бұрынғы тірек ұстамайды, жаңасы әлі тұман астында. Бұл адасу емес. Бұл — жолдың өзі.'},laguz:{n:'Лагуз — ағын',c:'Лагуз — әрқашан арнасын табатын су. Бұл кезең бақылау туралы емес, қозғалысқа сену туралы: қарсы еспей, ағысты таңдау. Қазір интуиция есептен дәлірек.'}},
+ sphere:['Сезім мәселесінде руна тура түседі: қарым-қатынас — осы кезеңнің басты айнасы. Сіз бен басқа адам арасында болып жатқан нәрсе ішіңіздегіні қайталайды.','Тыныштық мәселесінде белгі көрсетеді: үрей — жау емес, тым ұзақ күзетте тұрған күзетші. Кезеңге күрес емес, ауысым керек: тәжірибелер, шекаралар, тыныштық.','Іс пен ақшада руна айырықты көрсетеді: ескі тәсіл өз мерзімін өтеді. Ресурс күштен емес, бағыт таңдаудан келеді.','Өзіңізді іздеуде белгі сұрақты бұрады: «кім болуым керек» емес, «менде не бар және орын сұрайды». Үн қатқан жерден қазыңыз.','Отбасы өрісінде руна жұмсақ: түйіндер күшпен емес, уақыт пен сөзбен шешіледі. Бір адал әңгіме бір айлық үнсіз әрекеттен көп өзгертеді.'],
+ practice:['7 күндік тәжірибе: әр кеш үш уайымды жазып, қасына ертең қолыңыздан келетін бір әрекетті жазыңыз. Уайымның істер тізімі пайда болғанда, билігі кетеді.','7 күндік тәжірибе: күн сайын бір ұсақ нәрсені өзгертіңіз — жол, таңғы тәртіп, орын. Тоқырау үлкен жоспардан емес, кіші өзгерістерден қорқады.','7 күндік тәжірибе: таңертең өзіңізден сұраңыз: «Қорқыныш болмаса — нені таңдар едім?» Ойланбай жазыңыз. Апта соңында шешім қағазда болады.','7 күндік тәжірибе: әр кеш үш жол — не ұстады, не тартты, нені жіберуге дайынсыз. Қалпына келу — ұмыту емес, орын-орнына қою.','7 күндік тәжірибе: күніне бір рет бір нәрсені тек қалағаныңыз үшін жасаңыз — пайдасыз, мақсатсыз. «Жетіспейтін» нәрсе дәл сонда тұрады.'],
+ loading:['Жауаптарыңызды оқып жатырмын…','Руналарды тастап жатырмын…','Түсіндірме құрастырып жатырмын…'],
+ dob_skip:'Күнсіз жалғастыру',
  dob_t:'Туған күн', dob_note:'Ол бойынша сіздің символыңыз есептеледі. Басқа ешнәрсеге қолданылмайды.',
  day:'Күн', month:'Ай', year:'Жыл', dob_btn:'Көрсету және нәтиже алу',
  err_empty:'Күнді, айды және жылды көрсетіңіз — оларсыз есептеу мүмкін емес.', err_bad:'Мұндай күн жоқ — күн мен айды тексеріңіз.',
  months_nom:['Қаңтар','Ақпан','Наурыз','Сәуір','Мамыр','Маусым','Шілде','Тамыз','Қыркүйек','Қазан','Қараша','Желтоқсан'],
  dob_fmt:(d,m,y,M)=>`${y} жылғы ${d} ${['қаңтар','ақпан','наурыз','сәуір','мамыр','маусым','шілде','тамыз','қыркүйек','қазан','қараша','желтоқсан'][m]}`,
- res_h:'Кезеңіңіздің символы', rune:'Эваз — өткел', dob_line:'Туған күніңіз бойынша есептелді: ',
- res_body:'Эваз — жағалаулар арасындағы қозғалыс рунасы. Ескі мәтіндерде оның белгісі — ат: жаяу өте алмайтын қашықтықтан алып өтетін күш. Сіздің кезеңіңіз өткелге ұқсайды: бұрынғы тірек ұстамайды, ал жаңасы әлі тұман астында. Бұл жолдан адасу емес. Бұл — жолдың өзі.',
- res_note:'(демо: өнімде жауаптар логикасы мен туған күнге қарай 15–20 түсіндірменің бірі)',
- practice_b:'7 күндік тәжірибе:', practice:'әр кеш сайын үш жол: не ұстады, не тартты, нені жіберуге дайынсыз.',
+ res_h:'Кезеңіңіздің символы', dob_line:'Туған күніңіз бойынша есептелді: ',
+
+
+
  deliver:'Толық түсіндірмені қайда жіберейік?', btn_tg:'Telegram-нан алу', btn_mail:'Поштаға', btn_send:'Жіберу', mail_ph:'siz@example.kz', mail_aria:'Электрондық пошта',
  exp_h:'Тәжірибені кім жүргізеді', exp_lead:'Жанды дәстүр, гороскоп генераторы емес',
  photo:'ФОТО: қолдар + руналар, жылы жарық',
@@ -695,7 +728,14 @@ qb.addEventListener('mousemove',e=>{
 qb.addEventListener('mouseleave',()=>{qb.style.transform='perspective(900px) rotateX(0deg) rotateY(0deg)';});
 
 /* ================= quiz ================= */
-let step=0, dob=null;
+let step=0, dob=null, answers=[];
+const RUNE_IDS=['fehu','raidho','kenaz','gebo','algiz','sowilo','berkana','ehwaz','laguz'];
+const RUNE_GLYPHS={fehu:'ᚠ',raidho:'ᚱ',kenaz:'ᚲ',gebo:'ᚷ',algiz:'ᛉ',sowilo:'ᛋ',berkana:'ᛒ',ehwaz:'ᛖ',laguz:'ᛚ'};
+function hashStr(s){let x=2166136261;for(const ch of s){x^=ch.codePointAt(0);x=Math.imul(x,16777619)>>>0;}return x;}
+function computeRuneId(){
+  const key=answers.join('-')+'|'+(dob?dob.d+'.'+dob.m+'.'+dob.y:'nodate');
+  return RUNE_IDS[hashStr(key)%RUNE_IDS.length];
+}
 const qarea=document.getElementById('qarea'), prog=document.getElementById('prog');
 const TOTAL=7;
 function setProgress(){
@@ -718,7 +758,7 @@ function render(){
   if(step<D.questions.length){
     const q=D.questions[step];
     qarea.innerHTML='<div id="qinner" class="q-in"><div class="qnum">'+D.counter(step+1,TOTAL)+'</div><div class="qtitle">'+q.t+'</div>'+
-      q.o.map(o=>'<button class="opt" onclick="pick()">'+o+'</button>').join('')+'</div>';
+      q.o.map((o,oi)=>'<button class="opt" onclick="pick('+oi+')">'+o+'</button>').join('')+'</div>';
   } else if(step===D.questions.length){
     qarea.innerHTML=`<div id="qinner" class="q-in">
       <div class="qnum">${D.counter(TOTAL,TOTAL)}</div>
@@ -730,17 +770,23 @@ function render(){
         <select id="yy" class="sel" aria-label="${D.year}">${yearOpts()}</select>
       </div>
       <div class="err-msg hidden" id="doberr"></div>
-      <button class="btn" style="background:linear-gradient(135deg,#d29a70,#b87a51);color:#16110c;width:100%;padding:17px;" onclick="submitDob()">${D.dob_btn}</button>
+      <div class="dob-actions">
+        <button class="btn" style="background:linear-gradient(135deg,#d29a70,#b87a51);color:#16110c;width:100%;padding:17px;" onclick="submitDob()">${D.dob_btn}</button>
+        <button class="btn ghost" style="width:100%;" onclick="skipDob()">${D.dob_skip}</button>
+      </div>
     </div>`;
   } else {
-    const dobText=dob?D.dob_fmt(dob.d,dob.m,dob.y,D.months_nom):'';
+    const runeId=computeRuneId();
+    const R=D.runes[runeId];
+    const dobLine=dob?`<p class="dob-line">${D.dob_line}<b>${D.dob_fmt(dob.d,dob.m,dob.y,D.months_nom)}</b></p>`:'';
     qarea.innerHTML=`<div id="qinner" class="q-in"><div class="result">
       <h3>${D.res_h}</h3>
-      <div class="symbol" aria-hidden="true">ᛖ</div>
-      <div class="rune-name">${D.rune}</div>
-      <p class="dob-line">${D.dob_line}<b>${dobText}</b></p>
-      <p>${D.res_body} <i>${D.res_note}</i></p>
-      <p><b>${D.practice_b}</b> ${D.practice}</p>
+      <div class="symbol" aria-hidden="true">${RUNE_GLYPHS[runeId]}</div>
+      <div class="rune-name">${R.n}</div>
+      ${dobLine}
+      <p>${R.c}</p>
+      <p>${D.sphere[answers[0]||0]}</p>
+      <p>${D.practice[answers[1]||0]}</p>
       <div style="font-size:14px;color:#8f8577;margin-bottom:10px;">${D.deliver}</div>
       <div class="deliver">
         <a class="btn tg" href="#">${D.btn_tg}</a>
@@ -753,7 +799,18 @@ function render(){
     </div></div>`;
   }
 }
-function pick(){animOut(()=>{step++;render();});}
+function pick(oi){answers[step]=oi; animOut(()=>{step++;render();});}
+function showLoading(cb){
+  const D=L(); const glyphs=Object.values(RUNE_GLYPHS);
+  qarea.innerHTML=`<div id="qinner" class="q-in" style="text-align:center; padding:26px 0;">
+    <div class="symbol" id="loadGlyph" aria-hidden="true">ᚠ</div>
+    <div class="loadline" id="loadLine">${D.loading[0]}</div></div>`;
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){setTimeout(cb,250);return;}
+  let gi=0; const g=setInterval(()=>{gi=(gi+1)%glyphs.length; const el=document.getElementById('loadGlyph'); if(el)el.textContent=glyphs[gi];},150);
+  let li=0; const l=setInterval(()=>{li++; const el=document.getElementById('loadLine'); if(el&&li<D.loading.length)el.textContent=D.loading[li];},900);
+  setTimeout(()=>{clearInterval(g);clearInterval(l);cb();},2600);
+}
+function skipDob(){dob=null; animOut(()=>{step++; showLoading(render);});}
 function submitDob(){
   const D=L();
   const dd=document.getElementById('dd'), mm=document.getElementById('mm'), yy=document.getElementById('yy'), err=document.getElementById('doberr');
@@ -774,7 +831,7 @@ function submitDob(){
   }
   err.classList.add('hidden');
   dob={d,m,y};
-  animOut(()=>{step++;render();});
+  animOut(()=>{step++; showLoading(render);});
 }
 /* init */
 let saved='ru';
