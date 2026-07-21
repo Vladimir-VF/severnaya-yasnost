@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vladimir-vf.github.io/severnaya-yasnost/sitemap.xml
